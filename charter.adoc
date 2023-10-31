@@ -65,8 +65,10 @@ The resulting specification shall encompass:
 === Proposed Community Type
 * TG (Task Group)
 
-=== Reporting Committee
-* Application & Tools HC
+=== Reporting Committees
+
+==== Governing Committee
+* Unprivileged Spec IC
 
 === Dotted-line Committee
-* Unprivileged Spec IC
+* Application & Tools HC
