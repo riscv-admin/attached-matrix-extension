@@ -2,13 +2,17 @@
 
 == Introduction
 
-Matrix operations are a key operation in deep-learning training and inference for workloads like natural-language processing, recommendation systems, and image recognition. With the pervasive use of these applications in environments ranging from the datacenter, through IoT to mobile applications, matrix operations for RISC-V should scale across these application domains and apply to high-performance and resource-constrained environments.
+Matrix operations are a key operation in deep-learning training and inference for workloads like natural-language processing, recommendation systems, and image recognition.
+With the pervasive use of these applications in environments ranging from the datacenter, through IoT to mobile applications, matrix operations for RISC-V should scale across these application domains and apply to high-performance and resource-constrained environments.
 
-The Matrix Operations Unit TG will specify an attached Matrix Operations Unit Extension. An attached matrix unit executes instructions that are part of the processor instruction stream and, from an architectural perspective, must follow program order. An attached matrix unit is also self-contained and orthogonal to other architectural resources: it defines its own set of matrix registers and uses these as part of its specified operations.
+The Attached Matrix Facility (AMF) TG will specify an ISA extension for matrix-operations in an attached matrix unit.
+An attached matrix unit executes instructions that are part of the processor instruction stream and, from an architectural perspective, must follow program order.
+An attached matrix unit is also self-contained and orthogonal to other architectural resources: it defines its own set of matrix registers and uses these as part of its specified operations.
 
-The Matrix Operations Unit will specify an extension to the RISC-V ISA that implements a scalable (i.e., with the ability to operate on different operand sizes and allow the writing of matrix-geometry agnostic code) matrix operations unit. This matrix operations unit will be a standalone block implementable without dependencies on the RISC-V Vector extension.
+The Attached Matrix Facility (AMF) is an extension to the RISC-V ISA that implements a scalable (i.e., with the ability to operate on different operand sizes and allow the writing of matrix-geometry agnostic code) matrix operations unit.
+The AMF instructions target a standalone block implementable without dependencies on the RISC-V Vector extension.
 
-The resulting specification will encompass:
+The resulting specification shall encompass:
     
 * An overview of the commonly used matrix operations in established algorithms and commonly used software libraries;
 * A specification of the architectural state capable of holding/referencing two-dimensional matrix tiles of configurable/variable geometry;
@@ -25,7 +29,7 @@ The resulting specification will encompass:
 
 == Acting Leadership
 
-* Chou Jing (T-Head)
+* Qiu Jing (Alibaba)
 * Philipp Tomsich (VRULL)
 
 == Proposed Workplan
@@ -38,16 +42,20 @@ The resulting specification will encompass:
 == Proposed deliverables
 
 === Specification Deliverables
-* Matrix operations unit extensions
+
+* Attached Matrix Facility (AMF) unit extensions
 * Intrinsics specification for matrix operations
 
 === Compatibility and Simulation Tools
+
 * SAIL
 * Hand-written ACT w/ coverage-analysis
 
 === Proof-of-concept Implementations
+
 * Linux kernel (e.g., context switching for matrix tiles)
 * TensorFlow
+* PyTorch
 * oneDNN (https://github.com/oneapi-src/oneDNN)
 * GNU binutils
 * GCC with intrinsics support
